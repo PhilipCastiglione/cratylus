@@ -29,7 +29,7 @@ a user can record meals and generate reports. It'll be overengineered because th
 
 ## Architecture
 
-![Simple Architecture Diagram](simple_architecture.HEIC)
+![Simple Architecture Diagram](simple_architecture.png)
 
 ## Tech
 
