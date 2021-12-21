@@ -1,0 +1,6 @@
+{% extends "static/_layout.html" %}
+{% block title %}{{ error.code }} – {{ error.name|e }}{% endblock %}
+{% block content %}
+    <h1>{{ error.code }} – {{ error.name|e }}</h1>
+    <p>{{ error.description|e }}</p>
+{% endblock %}

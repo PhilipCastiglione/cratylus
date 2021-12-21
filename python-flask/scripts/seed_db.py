@@ -13,7 +13,7 @@ load_dotenv()
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
-    "environment", choices=["development"]
+    "environment", choices=["development", "production"]
 )
 args = parser.parse_args()
 

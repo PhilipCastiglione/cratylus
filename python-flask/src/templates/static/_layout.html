@@ -13,18 +13,30 @@
                 <li><a href="{{ url_for('static.index') }}">Home</a></li>
                 <li><a href="{{ url_for('static.about') }}">About</a></li>
                 {% if current_user.is_authenticated %}
-                <li>link 2</li>
-                <li>link 3</li>
+                <li><a href="{{ url_for('meal.list_meals') }}">Meals</a></li>
+                <li><a href="{{ url_for('report.reports_index') }}">Reports</a></li>
                 {% endif %}
             </ul>
         </nav>
         <section>
             {% if current_user.is_authenticated %}
-                <p>hi to current user</p>
+            <p>Logged in as: {{ current_user.name }}</p>
+            <form action="{{ url_for('static.logout') }}" method="post">
+              <input type="submit" value="Logout">
+            </form>
             {% endif %}
         </section>
     </header>
     <dialog>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
     </dialog>
     <main>{% block content %}{% endblock %}</main>
     <footer>

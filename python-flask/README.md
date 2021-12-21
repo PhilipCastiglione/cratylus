@@ -31,11 +31,15 @@ To run locally, you will need:
         - [ ] meal
         - [ ] report
         - [ ] savedfile
-    - [ ] user management
-        - [ ] creation
-        - [ ] logging in
-        - [ ] logging out
-        - [ ] authn requirement for a page
+    - [x] error handlers
+    - [x] flash messages
+    - [x] user management
+        - [x] creation
+        - [x] logging in
+        - [x] logging out
+        - [x] remember me
+        - [x] next url
+        - [x] authn requirement for a page
     - [ ] ...
 - [ ] document
     - [ ] usage (run the dev server)

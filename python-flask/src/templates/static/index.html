@@ -6,5 +6,25 @@
 {% endblock %}
 {% block content %}
     <h1>Nutrition Analyzer</h1>
+    {% if current_user.is_authenticated %}
+    <p>Hello {{ current_user.name }}.</p>
+    <form action="{{ url_for('static.logout') }}" method="post">
+        <input type="submit" value="Logout">
+    </form>
+    {% else %}
     <p>Log in:</p>
+    <form action="{{ url_for('static.login') }}" method="post">
+        <input type="hidden" id="next" name="next" value="{{ request.args.get('next') or form_values.next }}">
+        <label for="email">Email:&nbsp;</label>
+        <input type="text" id="email" name="email" value="{{ form_values.email }}">
+        <br>
+        <label for="password">Password:&nbsp;</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <label for="remember">Remember Me</label>
+        <input type="checkbox" id="remember" name="remember" value="1" {{ "checked" if form_values.remember else "" }}>
+        <br>
+        <input type="submit" value="Go">
+    </form>
+    {% endif %}
 {% endblock %}

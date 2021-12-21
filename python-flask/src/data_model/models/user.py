@@ -11,8 +11,7 @@ class User(db.Model):
     authenticated = db.Column(db.Boolean, default=False)
 
     def authenticate(self, password):
-        self.authenticated = True
-        return True
+        return self.password == password
 
     def is_authenticated(self):
         return self.authenticated
