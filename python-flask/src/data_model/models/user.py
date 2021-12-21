@@ -1,5 +1,14 @@
-class User():
-    authenticated = False
+from src.data_model.models.base import db
+
+
+class User(db.Model):
+    __tablename__ = "users"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255), nullable=False)
+    email = db.Column(db.String(255), nullable=False)
+    password = db.Column(db.String(255), nullable=False)
+    authenticated = db.Column(db.Boolean, default=False)
 
     def authenticate(self, password):
         self.authenticated = True
@@ -14,5 +23,5 @@ class User():
     def is_anonymous(self):
         return False
 
-    def __str__(self) -> str:
-        return f"{self.name}"
+    def get_id(self):
+        return self.id

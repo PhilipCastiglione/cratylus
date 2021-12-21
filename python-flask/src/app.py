@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 from flask import Flask
 
+from src.data_model.models.base import db
 from src.routes import static_routes, meal_routes, report_routes
 from src.authentication import login_manager
 
@@ -15,6 +16,7 @@ def create_app():
     app.register_blueprint(meal_routes.meal_blueprint)
     app.register_blueprint(report_routes.report_blueprint)
 
+    db.init_app(app)
     login_manager.init_app(app)
     
     return app
