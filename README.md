@@ -24,8 +24,9 @@ I'm this will be revised, but a starting point:
 
 ## Motivation
 
-To provide focus for implementation of functionality, I'll implement a nutrition analysis tool where
-a user can record meals and generate reports. It'll be overengineered because that's the point!
+To provide focus for implementation of functionality, I'll implement a nutrition analysis 
+tool where a user can record meals and generate reports. The projects are over-engineered 
+in some ways and not production ready in others.
 
 ## Architecture
 
