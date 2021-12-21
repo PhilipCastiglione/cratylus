@@ -32,6 +32,14 @@ in some ways and not production ready in others.
 
 ![Simple Architecture Diagram](simple_architecture.png)
 
+### Pages
+
+![Pages Diagram](pages.png)
+
+### Data Model
+
+![Data Model Diagram](data_model.png)
+
 ## Tech
 
 Things I might try:
